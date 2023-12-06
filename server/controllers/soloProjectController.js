@@ -66,8 +66,8 @@ soloProjectController.getUser = (req, res, next) => {
 };
 
 soloProjectController.createOrder = (req, res, next) => {
-  const { userid, link, note } = req.body;
-  const insertOrder = `INSERT INTO orders (userid, link, note) VALUES ('${userid}', '${link}', '${note}')`;
+  const { link, note } = req.body;
+  const insertOrder = `INSERT INTO orders (link, note) VALUES ('${link}', '${note}')`;
 
   db.query(insertOrder)
     .then(data => {
